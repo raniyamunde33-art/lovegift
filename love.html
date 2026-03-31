@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Talha ❤️ Raniya</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial;
+      text-align: center;
+      background: linear-gradient(to right, #ff758c, #ff7eb3);
+      color: white;
+    }
+    .container {
+      display: none;
+      padding: 20px;
+    }
+    input {
+      padding: 10px;
+      border-radius: 10px;
+      border: none;
+    }
+    button {
+      padding: 10px 20px;
+      border: none;
+      background: white;
+      color: #ff4b5c;
+      font-size: 16px;
+      border-radius: 10px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    img {
+      width: 250px;
+      height: 250px;
+      border-radius: 20px;
+      object-fit: cover;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+  </style>
+</head>
+
+<body>
+
+<h2>Enter Password 💌</h2>
+<p>(Hint: Your first date 💖)</p>
+
+<input type="password" id="pass">
+<br>
+<button onclick="checkPassword()">Unlock ❤️</button>
+
+<div class="container" id="mainContent">
+
+  <h1>Talha ❤️ Raniya</h1>
+  <p>Our Beautiful Journey 💕</p>
+
+  <p>📅 Anniversary: <b>30-10-2023</b></p>
+
+  <!-- Music -->
+  <audio id="music" loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+  <!-- Slideshow -->
+  <img id="slide" src="photo1.jpg">
+
+  <br><br>
+
+  <button onclick="showMessage()">Click for Love Messages 💌</button>
+  <p id="message"></p>
+
+</div>
+
+<script>
+function checkPassword() {
+  var password = document.getElementById("pass").value;
+  
+  if(password === "30-10-2023") {
+    document.getElementById("mainContent").style.display = "block";
+        document.getElementById("music").play(); // 🎵 THIS LINE FIXES IT
+  } else {
+    alert("Wrong password 😢");
+  }
+}
+
+// Slideshow
+var images = ["photo1.jpg", "photo2.jpg", "photo3.jpg"];
+var i = 0;
+
+setInterval(function() {
+  i = (i + 1) % images.length;
+  document.getElementById("slide").src = images[i];
+}, 2000);
+
+// Messages
+var messages = [
+  "You are my favorite person ❤️",
+  "Every moment with you is special 💕",
+  "I fall for you more every day 💖",
+  "You are my happiness 🥹",
+  "Forever yours 💞"
+];
+
+var j = 0;
+
+function showMessage() {
+  document.getElementById("message").innerHTML = messages[j];
+  j = (j + 1) % messages.length;
+}
+</script>
+
+</body>
+</html>
